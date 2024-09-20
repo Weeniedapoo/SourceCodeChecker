@@ -4,7 +4,7 @@ import openai
 app = Flask(__name__)
 
 # OpenAI API 키 설정
-openai.api_key = 'insert key  here'
+openai.api_key = 'Insert Your API Key Here!!!!!!!!!!!!!!!!!'
 
 # 루트 경로에 대한 라우트 정의
 @app.route('/')
