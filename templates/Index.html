@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,3 +62,68 @@
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source Code Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Source Code Checker</h1>
+
+        <div class="code-checker">
+            <!-- 코드 추가 및 Scanned Code를 한 박스 안에 배치 -->
+            <div class="box">
+                <h2>Drag & Drop file or paste code here</h2>
+                <textarea id="codeInput" placeholder="Paste your code here..."></textarea>
+                <div id="drop-area">Drop your file here</div>
+                
+                <!-- Scanned Code 박스 -->
+                <h2>Scanned Code</h2>
+                <div id="scannedCode" class="scrollable"></div>
+
+                <button id="analyzeBtn">Analyse</button>
+            </div>
+
+            <!-- 분석 결과 표시 -->
+            <div class="box results">
+                
+
+                <!-- 4개의 개별 분석 박스 -->
+                <div class="result-box">
+                    <h2>Secure Code</h2>
+                    <div id="secureCode" class="scrollable"></div>
+                </div>
+
+                <div class="result-box">
+                    <h2>Malicious Code</h2>
+                    <div id="maliciousCode" class="scrollable"></div>
+                </div>
+
+                <div class="result-box">
+                    <h2>Inefficient Code</h2>
+                    <div id="inefficientCode" class="scrollable"></div>
+                </div>
+
+                <div class="result-box">
+                    <h2>Code Errors</h2>
+                    <div id="codeErrors" class="scrollable"></div>
+                </div>
+            </div>
+
+            <!-- Corrected Code 표시 -->
+            <div class="box corrected-code">
+                <h2>Corrected Code</h2>
+                <div id="correctedCode" class="scrollable"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+>>>>>>> master
