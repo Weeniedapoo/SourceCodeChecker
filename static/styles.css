@@ -1,10 +1,10 @@
 body {
-    font-family: sans-serif;
-    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
     margin: 0;
     padding: 20px;
 }
-
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -13,7 +13,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 h1 {
     text-align: left;
     font-size: 35px;
@@ -21,19 +20,27 @@ h1 {
     margin-left: 5px;
 }
 h2 {
-    font-size: 18px;
-    font-family: sans-serif;
-    margin-top: 1px;
-    margin-bottom: 5px;
-    margin-left: 15px;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    margin-left: 12px;
 }
-
 .code-checker {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
 }
-
+#codeInput {
+    width: 450px; 
+    height: 200px;  
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border: 2px solid #000000;
+    border-radius: 15px;
+    resize: none; 
+}   
 .box {
     background-color: #fff;
     border: 4px solid #000000;
@@ -44,10 +51,86 @@ h2 {
     overflow: hidden;
     position: relative;
 }
-
-.scrollable {
-    height: 100px;
-    overflow-y: scroll;
+textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border: 2px solid #000000;
+    border-radius: 15px;
+    resize: none;
+}
+.analyse-button {
+    text-align: right;
+}
+.analyse-button button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.analyse-button button:hover {
+    background-color: #218838;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.buttons button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.buttons button:hover {
+    background-color: #0056b3;
+}
+.subheading {
+    margin: 20px 0;
+}
+.subheading h3 {
+    font-size: 18px;
+    color: #333;
+    text-align: left;
+}
+.toggle-box {
+    width:450px;
+    height: 510px;
+    display: none;
+    overflow-y: auto;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 2px solid #000000;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 14px;
+}
+.scanned_code_box {
+    height: 240px;
+    overflow-y: auto;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 2px solid #000000;
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 14px;
+    margin-top: 2px;
+}
+.corrected_box { 
+    height: 620px;
+    overflow-y: auto;
     border-radius: 15px;
     padding: 10px;
     background-color: #f9f9f9;
@@ -56,75 +139,70 @@ h2 {
     font-family: monospace;
     font-size: 14px;
 }
-
-textarea {
-    width: 450px;
-    height: 200px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    border: 2px solid #000000;
-    border-radius: 15px;
-}
-
-button {
-    width: 100px;
-    height: 40px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: black;
-    border: 1px solid #000000;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-}
-.button.active{
-  
-}
-#drop-area {
-    border: 2px dashed #ccc;
-    padding: 20px;
-    text-align: center;
-}
-
-#drop-area.dragover {
-    background-color: #f0f8ff;
-    border-color: #000;
-}
-
-
 .analysis-box {
+    height: 110px;
+    overflow-y: auto;
+    border-radius: 15px;
     padding: 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    height: 150px;
-    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border: 3px solid #000000;
     white-space: pre-wrap;
     font-family: monospace;
     font-size: 14px;
-    overflow-y: auto;
+}
+.drop-area {
+    border: 2px dashed #ccc;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+.drop-area.dragover {
+    background-color: #f0f8ff;
+    border-color: #000;
+}
+.drop-area p {
+    margin: 5px 0;
+    font-size: 14px; 
 }
 
-.result-box {
-    padding: 10px;
-    background-color: #fff;
-    border: 2px solid #000000;
-    border-radius: 15px;
-    margin-top: 5px;
+.file-formats {
+    font-size: 12px; 
+    color: #666; 
+}
+.loading-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    margin-bottom: 20px;
+}
+.loading-bar .progress {
+    width: 0;
+    height: 100%;
+    background-color: #28a745;
+}
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
-.corrected-code {
-    background-color: #fff;
-    border: 4px solid #000000;
-    border-radius: 15px;
-    padding: 15px;
-    height: 700px;
-    overflow: hidden;
-    position: relative;
+::-webkit-scrollbar {
+    width: 8px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }
