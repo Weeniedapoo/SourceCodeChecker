@@ -59,9 +59,34 @@
             <div class="box corrected-code">
                 <h2>Corrected Code</h2>
                 <div id="correctedCode" class="corrected_box"></div>
+              <div class="save-container">
+    <input type="text" id="nameInput" placeholder="이름을 입력하세요">
+    <button id="saveBtn">Save</button>
+</div>
             </div>
         </div>
+      <div class="box log-box">
+        <h2>로그</h2>
+        <table id="logTable">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>날짜 및 시간</th>
+                    <th>이름</th>
+                    <th>Secure Code</th>
+                    <th>Malicious Code</th>
+                    <th>Inefficient Code</th>
+                    <th>Code Errors</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 로그가 저장될 부분 -->
+            </tbody>
+        </table>
     </div>
+    </div>
+  
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+  
 </body>
 </html>

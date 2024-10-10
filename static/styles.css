@@ -129,7 +129,7 @@ textarea {
     margin-top: 2px;
 }
 .corrected_box { 
-    height: 620px;
+    height: 600px;
     overflow-y: auto;
     border-radius: 15px;
     padding: 10px;
@@ -205,4 +205,70 @@ textarea {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
+}
+.save-container {
+    display: flex;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* 텍스트 입력 박스 스타일 */
+#nameInput {
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 300px;
+    margin-right: 10px; /* 저장 버튼과의 간격 */
+}
+
+/* 저장 버튼 스타일 */
+#saveBtn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 16px;
+    
+}
+
+#saveBtn:hover {
+    background-color: #218838;
+}
+
+/* 로그 테이블 박스 */
+.log-box {
+    background-color: #fff;
+    border: 2px solid #000000;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 20px;
+    width: 1550px;
+    height: auto; /* 로그가 추가될 때마다 자동으로 높이 증가 */
+    overflow: visible; /* 내용이 넘치면 박스가 늘어나도록 */
+}
+
+#logTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+#logTable th, #logTable td {
+    border: 1px solid #000000;
+    padding: 8px;
+}
+
+#logTable th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+#logTable tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
