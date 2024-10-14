@@ -11,12 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let logCount = 0;
     let loadingInterval;
 
-    // Code input event (displays the code in the scanned code area)
     codeInput.addEventListener('input', function() {
         document.getElementById('scanned_Code').innerText = codeInput.value;
     });
 
-    // File drag & drop event
     dropArea.addEventListener('click', function() {
         fileInput.click();
     });
@@ -59,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Analyze button event
     analyzeBtn.addEventListener('click', function() {
         const code = codeInput.value;
 
@@ -103,11 +100,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }); 
     });
 
-    // Save button event - logs data
     saveBtn.addEventListener('click', function() {
         const name = nameInput.value;
     
-        // 우선순위: "발견되지 않았습니다."가 있으면 ✔️, 아니면 "문제"를 체크하여 ❌
         const secureCodeText = document.getElementById('secureCodeText').innerText;
         const maliciousCodeText = document.getElementById('maliciousCodeText').innerText;
         const inefficientCodeText = document.getElementById('inefficientCodeText').innerText;
@@ -131,12 +126,9 @@ document.addEventListener("DOMContentLoaded", function() {
             </tr>
         `;
     
-        logTable.innerHTML = logEntry + logTable.innerHTML; // 새 로그를 맨 앞에 추가
+        logTable.innerHTML = logEntry + logTable.innerHTML;
     });
 
-
-
-    // Button click handler to toggle result boxes
     window.handleButtonClick = function(buttonText) {
         document.getElementById('subheadingText').innerText = 'Analysed Results For: "' + buttonText + '"';
 

@@ -208,22 +208,20 @@ textarea {
 }
 .save-container {
     display: flex;
-    justify-content: flex-start; /* 왼쪽 정렬 */
+    justify-content: flex-start;
     align-items: center;
     margin-top: 10px;
 }
 
-/* 텍스트 입력 박스 스타일 */
 #nameInput {
     padding: 10px;
     border: 2px solid #000000;
     border-radius: 5px;
     font-size: 14px;
     width: 300px;
-    margin-right: 10px; /* 저장 버튼과의 간격 */
+    margin-right: 10px;
 }
 
-/* 저장 버튼 스타일 */
 #saveBtn {
     padding: 10px 20px;
     border: none;
@@ -239,7 +237,6 @@ textarea {
     background-color: #218838;
 }
 
-/* 로그 테이블 박스 */
 .log-box {
     background-color: #fff;
     border: 2px solid #000000;
@@ -247,8 +244,8 @@ textarea {
     padding: 15px;
     margin-top: 20px;
     width: 1550px;
-    height: auto; /* 로그가 추가될 때마다 자동으로 높이 증가 */
-    overflow: visible; /* 내용이 넘치면 박스가 늘어나도록 */
+    height: auto;
+    overflow: visible;
 }
 
 #logTable {
